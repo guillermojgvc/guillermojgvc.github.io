@@ -1,0 +1,23 @@
+{
+    "home_grettings":"¡SALUDOS!",
+    "home_short_desc": "I'm a Freelance UI/UX Designer and Developer based in London, England. I strives to build immersive and beautiful web applications through carefully crafted code and user-centric design.",
+    "home_btn_about":"Acerca de mi",
+    "home_btn_portfolio":"Portafolio",
+    "header_about": "currículum",
+    "mobile_header_about": "currículum",
+    "header_home": "Home",
+    "mobile_header_home": "Home",
+    "header_work": "Portfolio",
+    "mobile_header_work": "My Portfolio",
+    "header_contact": "Contact",
+    "mobile_header_contact": "get in touch",
+    "header_blog": "Blog",
+    "mobile_header_blog": "My Blog",
+    "animated_iam": "Soy",
+    "animated_name": "Guillermo Vaca",
+    "animated_text1": "Software Engineer",
+    "animated_text2": "GIS Developer",
+    "animated_text3": "FullStack Developer",
+    "preloader_name": "Guillermo",
+    "preloader_surname": "Vaca"
+}
