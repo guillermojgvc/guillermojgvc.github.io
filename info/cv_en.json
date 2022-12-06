@@ -1,0 +1,235 @@
+{
+    "experience": [
+        {
+            "year": "May 2021 - Today",
+            "institution": "Aplios",
+            "role": "Software Analyst",
+            "responsibilities": "Fullstack developer, ETL developer",
+            "projects":[
+                "credit reports"
+            ]
+        },
+        {
+            "year": "Aug 2020 - Apr 2021",
+            "institution": "Track4Go",
+            "role": "Lead Software Developer",
+            "responsibilities": "Fullstack developer, Mobile App developer",
+            "projects":[
+                "mobility as a service, fleet and transport"
+            ]
+        },
+        {
+            "year": "Mar 2019 - Jul 2020",
+            "institution": "Yagé",
+            "role": "Software Developer",
+            "responsibilities": "Fullstack developer, Mobile App developer",
+            "projects":[
+                "Bank institutional page",
+                "Chevrolet Sale Asistant 'Mi Asesor Chevrolet'"
+            ]
+        },
+        {
+            "year": "Mar 2018 - Mar 2019",
+            "institution": "Corporación Nacional de Telecomunicaciones CNT EP.",
+            "role": "GIS Analyst",
+            "responsibilities": "GIS Developer, Fullstack developer",
+            "projects":[
+                "Telco GIS projects"
+            ]
+        },
+        {
+            "year": "May 2013 - Feb 2018",
+            "institution": "EXCO - Excelencia Corporativa",
+            "role": "Software consultant",
+            "responsibilities": "GIS Developer, Fullstack developer, ETL developer",
+            "projects":[
+                "Quito's district indicators second edition",
+                "Web map viewer for investment projects",
+                "Micro planning web map viewer",
+                "National Logistics Observatory - ONL (Colombia)",
+                "Public works metropolitan geodatabase",
+                "Decentralized territorial information system",
+                "Decentralized Autonomous governments monitoring system",
+                "Irregular human settlements system",
+                "Crime web map viewer",
+                "Quito´s district indicators"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "year": "2019",
+            "institution": "Universität Salzburg",
+            "degree": "Geographical Information Science & Systems (UNIGIS Specialist)."
+        },
+        {
+            "year": "2015",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Informatics Engineer"
+        }
+    ],
+    "certification": [
+        {
+            "year": "2022",
+            "institution": "Nova English",
+            "degree": "B1 level"
+        },
+        {
+            "year": "2017",
+            "institution": "Instituto tecnológico Benito Juárez",
+            "degree": "Ofimática: Asistencia Administrativa (Administrative Assistance: Ofimatics)"
+        },
+        {
+            "year": "2017",
+            "institution": "Instituto tecnológico Benito Juárez",
+            "degree": "Administración de bases de datos (Database Administrator)"
+        },
+        {
+            "year": "2017",
+            "institution": "Epik Consulting",
+            "degree": "Ciclo de vida de Desarrollo de software (Software development life cycle)"
+        },
+        {
+            "year": "2015",
+            "institution": "Clear Minds",
+            "degree": "AngularJS Avanzado (Advanced AngularJS)"
+        },
+        {
+            "year": "2015",
+            "institution": "Clear Minds",
+            "degree": "Angularjs Básico (Basic AngularJS)"
+        },
+        {
+            "year": "2014",
+            "institution": "SECAP",
+            "degree": "Gerencia de calidad y normas ISO 9000 (Quality management and ISO 9000)"
+        },
+        {
+            "year": "2014",
+            "institution": "SECAP",
+            "degree": "Gestión por procesos (Process management)"
+        },
+        {
+            "year": "2013",
+            "institution": "Clear Minds",
+            "degree": "Java Server Faces."
+        },
+        {
+            "year": "2013",
+            "institution": "Clear Minds",
+            "degree": "Java Standar Edition."
+        },
+        {
+            "year": "2011",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Microsoft Technology Associate MTA Database Adm."
+        },
+        {
+            "year": "2011",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Suficiencia en manejo de herramientas informáticas (Proficiency of computer tools - Office)."
+        },
+        {
+            "year": "2007",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Suficiencia en manejo de herramientas informáticas (Proficiency of computer tools - Office)."
+        },
+        {
+            "year": "2005",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Auxiliar técnico en diseño gráfico digital (Graphic designer assistant)"
+        },
+        {
+            "year": "2004",
+            "institution": "SECAP",
+            "degree": "Auxiliar técnico en mantenimiento de computadores (Help desk assistant)."
+        }
+    ],
+    "skills": [
+        {
+            "title": "JAVA",
+            "knowledge": 80
+        },
+        {
+            "title": ".Net",
+            "knowledge": 60
+        },
+        {
+            "title": "Python",
+            "knowledge": 40
+        },
+        {
+            "title": "PHP",
+            "knowledge": 70
+        },
+        {
+            "title": "React JS",
+            "knowledge": 80
+        },
+        {
+            "title": "React Native",
+            "knowledge": 80
+        },
+        {
+            "title": "Apache Cordova",
+            "knowledge": 70
+        },
+        {
+            "title": "JavaScript",
+            "knowledge": 85
+        },
+        {
+            "title": "jQuery",
+            "knowledge": 70
+        },
+        {
+            "title": "CSS",
+            "knowledge": 80
+        },
+        {
+            "title": "Arcgis",
+            "knowledge": 60
+        },
+        {
+            "title": "Sharepoint",
+            "knowledge": 40
+        },
+        {
+            "title": "Web Services",
+            "knowledge": 90
+        },
+        {
+            "title": "Oracle",
+            "knowledge": 80
+        },
+        {
+            "title": "MS SQL Server",
+            "knowledge": 75
+        },
+        {
+            "title": "PostgreSQL/PostGIS",
+            "knowledge": 90
+        },
+        {
+            "title": "MySQL",
+            "knowledge": 40
+        },
+        {
+            "title": "SQLite",
+            "knowledge": 90
+        },
+        {
+            "title": "Power BI",
+            "knowledge": 40
+        },
+        {
+            "title": "Pentaho",
+            "knowledge": 85
+        },
+        {
+            "title": "Integration Services",
+            "knowledge": 80
+        }
+        
+    ]
+}

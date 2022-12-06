@@ -1,16 +1,33 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import NavContext from "../context/navContext";
+// CUSTOM
+import { FormattedMessage, FormattedDate, useIntl } from "react-intl";
+import info_en from "../../info/cv_en.json";
+import info_es from "../../info/cv_es.json";
+
 const About = () => {
+  const intl = useIntl();
   const { nav } = useContext(NavContext);
+  const [language, setLanguage] = useState(intl.formatMessage({ id: 'current' }));
+
+  const personalInfo = {
+    'en': info_en,
+    'es': info_es,
+  }
+
   return (
     <section id="about" className={`${nav === "about" ? "active" : ""}`}>
       {/* Main Heading Starts */}
       <div className="container page-title text-center">
         <h2 className="text-center">
-          about <span>me</span>
+          <span>
+            <FormattedMessage id="about_title"
+              defaultMessage="resume" />
+          </span>
         </h2>
         <span className="title-head-subtitle">
-          I design and code beautiful things, and I love what I do.
+          <FormattedMessage id="about_subtitle"
+            defaultMessage="I work as software developer since 2013, and I love what I do." />
         </span>
       </div>
       {/* Main Heading Ends */}
@@ -26,10 +43,8 @@ const About = () => {
               />
             </div>
             <p className="d-block d-md-none">
-              {`I'm`} a Freelance UI/UX Designer and Developer based in London,
-              England. I strives to build immersive and beautiful web
-              applications through carefully crafted code and user-centric
-              design.
+              <FormattedMessage id="about_short_info"
+                defaultMessage="I'm a FullStack and GIS Developer based in Quito, Ecuador.  I strives to build immersive and beautiful applications through carefully crafted clean code and user-centric design." />
             </p>
           </div>
           <div className="row col-xl-6 col-lg-6 col-md-12">
@@ -37,86 +52,141 @@ const About = () => {
               <ul className="list-1">
                 <li>
                   <h6>
-                    <span className="font-weight-600">First Name</span>
-                    Daria
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_first_name"
+                        defaultMessage="First Name" />
+                    </span>
+                    <FormattedMessage id="info_first_name"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Last Name</span>
-                    Taylor
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_last_name"
+                        defaultMessage="Last Name" />
+                    </span>
+                    <FormattedMessage id="info_last_name"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Birthdate</span>21 june
-                    1990
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_birthdate"
+                        defaultMessage="Birthdate" />
+                    </span>
+                    <FormattedMessage id="info_birthdate"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Nationality</span>
-                    English
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_nationality"
+                        defaultMessage="Nationality" />
+                    </span>
+                    <FormattedMessage id="info_nationality"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Experience</span>7 years
-                  </h6>
-                </li>
-                <li>
-                  <h6>
-                    <span className="font-weight-600">Address</span>
-                    Istanbul
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_address"
+                        defaultMessage="Address" />
+                    </span>
+                    <FormattedMessage id="info_address"
+                      defaultMessage="" />
                   </h6>
                 </li>
               </ul>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
               <ul className="list-2">
+                {/* <li>
+                  <h6>
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_age"
+                        defaultMessage="" />
+                    </span>
+                    <FormattedMessage id="info_experience"
+                      defaultMessage=""
+                      values={{
+                        year: Math.floor((new Date() - new Date(intl.formatMessage({ id: 'info_birthdate' })).getTime()) / 3.15576e+10)
+                      }}
+                    />
+                  </h6>
+                </li> */}
                 <li>
                   <h6>
-                    <span className="font-weight-600">Freelance</span>
-                    Available
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_experience"
+                        defaultMessage="Experience" />
+                    </span>
+                    <FormattedMessage id="info_experience"
+                      defaultMessage=""
+                      values={{
+                        year: new Date().getFullYear() - intl.formatMessage({ id: 'info_since_year' })
+                      }}
+                    />
+
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Langages</span>
-                    English
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_languages"
+                        defaultMessage="Languages" />
+                    </span>
+                    <FormattedMessage id="info_languages"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Phone</span>+34 21 18 40
-                    10
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_phone"
+                        defaultMessage="Phone" />
+                    </span>
+                    <FormattedMessage id="info_phone"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Email</span>
-                    you@you.com
+                    <span className="font-weight-600">
+                      <FormattedMessage id="about_email"
+                        defaultMessage="Email" />
+                    </span>
+                    <FormattedMessage id="info_email"
+                      defaultMessage="" />
                   </h6>
                 </li>
                 <li>
                   <h6>
-                    <span className="font-weight-600">Skype</span>
-                    daria.taylor
+                    <span className="font-weight-600">
+                      <FormattedMessage id="contact_linkedin"
+                        defaultMessage="LinkedIn" />
+                    </span>
+                    <FormattedMessage id="info_linkedin"
+                      defaultMessage="" />
                   </h6>
                 </li>
-                <li>
+                {/* <li>
                   <h6>
                     <span className="font-weight-600">Dribbble</span>
                     taylor.dribbble
                   </h6>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="col-12 resume-btn-container">
               <a href="#" className="btn btn-resume">
                 <span>
                   <i className="fa fa-download" />
-                  download my cv
+                  <FormattedMessage id="about_btn_downloadcv"
+                    defaultMessage="download my cv" />
                 </span>
               </a>
             </div>
@@ -136,338 +206,170 @@ const About = () => {
             {/* Experience Starts */}
             <div className="col-xl-6 col-lg-6 col-md-6">
               <h2 className="font-weight-600 uppercase title-section">
-                experience
+                <FormattedMessage id="about_experience"
+                  defaultMessage="experience" />
               </h2>
               <div className="resume-items">
-                {/* Item Starts */}
-                <div className="item">
-                  <span className="bullet" />
-                  <div className="card">
-                    <div className="card-header">
-                      <span className="year">
-                        <i className="fa fa-calendar" />
-                        <i className="fa fa-caret-right" />
-                        2017 - 2019
-                      </span>
-                      <span className="d-block font-weight-400 uppercase">
-                        web designer
-                        <span className="separator" />
-                        <span className="font-weight-700">Envato</span>
-                      </span>
+                {
+                  personalInfo[language]["experience"].map(item => {
+                    {/* Item Starts */ }
+                    return <div key={`${item.projects}`} className="item">
+                      <span className="bullet" />
+                      <div className="card">
+                        <div className="card-header">
+                          <span className="year">
+                            <i className="fa fa-calendar" />
+                            <i className="fa fa-caret-right" />
+                            {item.year}
+                          </span>
+                          <span className="d-block font-weight-400 uppercase">
+                            {item.role}
+                            <span className="separator" />
+                            <span className="font-weight-700">{item.institution}</span>
+                          </span>
+                        </div>
+                        <div className="card-body">
+                          <p>
+                            {item.responsibilities}
+                          </p>
+                          <span className="d-block font-weight-400 uppercase">
+                            <FormattedMessage id="about_projects"
+                              defaultMessage="ACCOMPLISHED PROJECTS:" />
+                            {item.projects != undefined && item.projects.map(project => {
+                              return <li key={`li_${item.projects}`}>{project}</li>
+                            })}
+
+                          </span>
+
+                        </div>
+                      </div>
                     </div>
-                    <div className="card-body">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        diam nonummy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Item Ends */}
-                {/* Item Starts */}
-                <div className="item">
-                  <span className="bullet" />
-                  <div className="card">
-                    <div className="card-header">
-                      <span className="year">
-                        <i className="fa fa-calendar" />
-                        <i className="fa fa-caret-right" />
-                        2014 - 2017
-                      </span>
-                      <span className="d-block font-weight-400 uppercase">
-                        web developer
-                        <span className="separator" />
-                        <span className="font-weight-700">Twitter</span>
-                      </span>
-                    </div>
-                    <div className="card-body">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        diam nonummy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Item Ends */}
-                {/* Item Starts */}
-                <div className="item">
-                  <span className="bullet" />
-                  <div className="card">
-                    <div className="card-header">
-                      <span className="year">
-                        <i className="fa fa-calendar" />
-                        <i className="fa fa-caret-right" />
-                        2010 - 2014
-                      </span>
-                      <span className="d-block font-weight-400 uppercase">
-                        Consultant
-                        <span className="separator" />
-                        <span className="font-weight-700">Google</span>
-                      </span>
-                    </div>
-                    <div className="card-body">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        diam nonummy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Item Ends */}
+                    {/* Item Ends */ }
+                  })
+                }
+
               </div>
             </div>
             {/* Experience Ends */}
-            {/* Education Starts */}
+            {/* Education and Certification Starts */}
             <div className="col-xl-6 col-lg-6 col-md-6 skills-container">
+              {/* Education Starts */}
               <h2 className="font-weight-600 uppercase title-section">
-                Education
+                <FormattedMessage id="about_education"
+                  defaultMessage="education" />
               </h2>
               <div className="resume-items">
-                {/* Item Starts */}
-                <div className="item">
-                  <span className="bullet" />
-                  <div className="card">
-                    <div className="card-header">
-                      <span className="year">
-                        <i className="fa fa-calendar" />
-                        <i className="fa fa-caret-right" />
-                        2007 - 2010
-                      </span>
-                      <span className="d-block font-weight-400 uppercase">
-                        Engineering Degree
-                        <span className="separator" />
-                        <span className="font-weight-700">
-                          Istanbul University
-                        </span>
-                      </span>
+                {
+                  personalInfo[language]["education"].map(item => {
+                    {/* Item Starts */ }
+                    return <div key={`${item.institution}_${item.year}`} className="item">
+                      <span className="bullet" />
+                      <div className="card">
+                        <div className="card-header">
+                          <span className="year">
+                            <i className="fa fa-calendar" />
+                            <i className="fa fa-caret-right" />
+                            {item.year}
+                          </span>
+                          <span className="d-block font-weight-400 uppercase">
+                            {item.degree}
+                            <span className="separator" />
+                            <span className="font-weight-700">
+                              {item.institution}
+                            </span>
+                          </span>
+                        </div>
+                        {/* <div className="card-body">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                            diam nonummy.
+                          </p>
+                        </div> */}
+                      </div>
                     </div>
-                    <div className="card-body">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        diam nonummy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Item Ends */}
-                {/* Item Starts */}
-                <div className="item">
-                  <span className="bullet" />
-                  <div className="card">
-                    <div className="card-header">
-                      <span className="year">
-                        <i className="fa fa-calendar" />
-                        <i className="fa fa-caret-right" />
-                        2005 - 2007
-                      </span>
-                      <span className="d-block font-weight-400 uppercase">
-                        Masters Degree
-                        <span className="separator" />
-                        <span className="font-weight-700">
-                          Paris University
-                        </span>
-                      </span>
-                    </div>
-                    <div className="card-body">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        diam nonummy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Item Ends */}
-                {/* Item Starts */}
-                <div className="item">
-                  <span className="bullet" />
-                  <div className="card">
-                    <div className="card-header">
-                      <span className="year">
-                        <i className="fa fa-calendar" />
-                        <i className="fa fa-caret-right" />
-                        2001 - 2005
-                      </span>
-                      <span className="d-block font-weight-400 uppercase">
-                        Bachelor Degree
-                        <span className="separator" />
-                        <span className="font-weight-700">
-                          Moscow High School
-                        </span>
-                      </span>
-                    </div>
-                    <div className="card-body">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                        diam nonummy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Item Ends */}
+                    {/* Item Ends */ }
+
+                  })
+                }
+
               </div>
+              {/* Education Ends */}
+              <br></br>
+              {/* Certification Starts */}
+              <h2 className="font-weight-600 uppercase title-section">
+                <FormattedMessage id="about_certifications"
+                  defaultMessage="certifications" />
+              </h2>
+              <div className="resume-items">
+                {
+                  personalInfo[language]["certification"].map(item => {
+                    {/* Item Starts */ }
+                    return <div key={`cert_${item.institution}_${item.year}`} className="item">
+                      <span className="bullet" />
+                      <div className="card">
+                        <div className="card-header">
+                          <span className="year">
+                            <i className="fa fa-calendar" />
+                            <i className="fa fa-caret-right" />
+                            {item.year}
+                          </span>
+                          <span className="d-block font-weight-400 uppercase">
+                            {item.degree}
+                            <span className="separator" />
+                            <span className="font-weight-700">
+                              {item.institution}
+                            </span>
+                          </span>
+                        </div>
+                        {/* <div className="card-body">
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                            diam nonummy.
+                          </p>
+                        </div> */}
+                      </div>
+                    </div>
+                    {/* Item Ends */ }
+
+                  })
+                }
+
+              </div>
+              {/* Certification Ends */}
             </div>
-            {/* Education Ends */}
+            {/* Education and Certification Ends */}
           </div>
           {/* Skills Starts */}
           <div className="row">
             {/* Skill Bar Starts */}
             <div className="col-12">
               <h2 className="font-weight-600 uppercase title-section skills-title">
-                skills
+                <FormattedMessage id="about_skills"
+                  defaultMessage="skills" />
               </h2>
             </div>
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">html</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={80}
-                  style={{ width: "80%" }}
-                />
-                <span className="percent" style={{ right: "calc(20% - 21px)" }}>
-                  80%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">javascript</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={60}
-                  style={{ width: "60%" }}
-                />
-                <span className="percent" style={{ right: "calc(40% - 21px)" }}>
-                  60%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">css</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={75}
-                  style={{ width: "75%" }}
-                />
-                <span className="percent" style={{ right: "calc(25% - 21px)" }}>
-                  75%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">jquery</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={65}
-                  style={{ width: "65%" }}
-                />
-                <span className="percent" style={{ right: "calc(35% - 21px)" }}>
-                  65%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">wordpress</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={90}
-                  style={{ width: "90%" }}
-                />
-                <span className="percent" style={{ right: "calc(10% - 21px)" }}>
-                  90%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">angular js</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={85}
-                  style={{ width: "85%" }}
-                />
-                <span className="percent" style={{ right: "calc(15% - 21px)" }}>
-                  85%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">illustrator</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={60}
-                  style={{ width: "60%" }}
-                />
-                <span className="percent" style={{ right: "calc(40% - 21px)" }}>
-                  60%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">after effects</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={75}
-                  style={{ width: "75%" }}
-                />
-                <span className="percent" style={{ right: "calc(25% - 21px)" }}>
-                  75%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
-            {/* Skill Bar Starts */}
-            <div className="col-12 col-sm-6 col-md-4">
-              <span className="skill-text">photoshop</span>
-              <div className="chart-bar">
-                <span
-                  className="item-progress"
-                  data-percent={80}
-                  style={{ width: "80%" }}
-                />
-                <span className="percent" style={{ right: "calc(20% - 21px)" }}>
-                  80%
-                  <b className="arrow" />
-                </span>
-              </div>
-            </div>
-            {/* Skill Bar Ends */}
+            {
+              personalInfo[language]["skills"].map(item => {
+                return <div key={`${item.knowledge}_${item.title}`} className="col-12 col-sm-6 col-md-4">
+                  <span className="skill-text">{item.title}</span>
+                  <div className="chart-bar">
+                    <span
+                      className="item-progress"
+                      data-percent={item.knowledge}
+                      style={{ width: `${item.knowledge}%` }}
+                    />
+                    <span className="percent" style={{ right: `calc(${100 - item.knowledge}% - 21px)` }}>
+                      {item.knowledge}%
+                      <b className="arrow" />
+                    </span>
+                  </div>
+                </div>
+              })
+            }
           </div>
-          {/* Skills Starts */}
+          {/* Skills Ends */}
         </div>
         {/* Resume Ends */}
       </div>

@@ -2,15 +2,22 @@
   "name": "istanbul-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build && npm run export && touch out/.nojekyll",
+    "deploy": "gh-pages -d out -t true",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "bootstrap": "^5.2.0",
     "emailjs-com": "^3.2.0",
+    "gh-pages": "^4.0.0",
     "next": "12.2.2",
     "next-videos": "^1.5.0",
     "react": "^18.2.0",

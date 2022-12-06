@@ -53,7 +53,7 @@ const Home = ({ leftImg, video, leftImgSrc }) => {
 
                 </span>
               </a>
-              <a
+              {/* <a
                 href="#work"
                 onClick={() => changeNav("work")}
                 className="btn btn-secondary link-portfolio-two"
@@ -63,7 +63,7 @@ const Home = ({ leftImg, video, leftImgSrc }) => {
                   <FormattedMessage id="home_btn_portfolio"
                     defaultMessage="portfolio" />
                 </span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -8,19 +8,19 @@ import { FormattedMessage } from "react-intl";
 const menus = [
   { icon: "fa fa-home", dkMenuName: "Home", name: "Home", id: "home" },
   { icon: "fa fa-user", dkMenuName: "About", name: "About me", id: "about" },
-  {
-    icon: "fa fa-briefcase",
-    dkMenuName: "Portfolio",
-    name: "my Portfolio",
-    id: "work",
-  },
+  // {
+  //   icon: "fa fa-briefcase",
+  //   dkMenuName: "Portfolio",
+  //   name: "my Portfolio",
+  //   id: "work",
+  // },
   {
     icon: "fa fa-envelope-open",
     dkMenuName: "Contact",
     name: "get in touch",
     id: "contact",
   },
-  { icon: "fa fa-comments", dkMenuName: "Blog", name: "my Blog", id: "blog" },
+  // { icon: "fa fa-comments", dkMenuName: "Blog", name: "my Blog", id: "blog" },
 ];
 
 const Header = ({ light }) => {
