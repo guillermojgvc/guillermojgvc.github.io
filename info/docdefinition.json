@@ -75,18 +75,17 @@
         }
     ],
     "images": {
-        "snow": "https://picsum.photos/seed/picsum/200/300",
-        "star00": "http://localhost:3000/img/stars/star00.png",
-        "star05": "http://localhost:3000/img/stars/star05.png",
-        "star10": "http://localhost:3000/img/stars/star10.png",
-        "star15": "http://localhost:3000/img/stars/star15.png",
-        "star20": "http://localhost:3000/img/stars/star20.png",
-        "star25": "http://localhost:3000/img/stars/star25.png",
-        "star30": "http://localhost:3000/img/stars/star30.png",
-        "star35": "http://localhost:3000/img/stars/star35.png",
-        "star40": "http://localhost:3000/img/stars/star40.png",
-        "star45": "http://localhost:3000/img/stars/star45.png",
-        "star50": "http://localhost:3000/img/stars/star50.png"
+        "star00": "https://guillermojgvc.github.io/img/stars/star00.png",
+        "star05": "https://guillermojgvc.github.io/img/stars/star05.png",
+        "star10": "https://guillermojgvc.github.io/img/stars/star10.png",
+        "star15": "https://guillermojgvc.github.io/img/stars/star15.png",
+        "star20": "https://guillermojgvc.github.io/img/stars/star20.png",
+        "star25": "https://guillermojgvc.github.io/img/stars/star25.png",
+        "star30": "https://guillermojgvc.github.io/img/stars/star30.png",
+        "star35": "https://guillermojgvc.github.io/img/stars/star35.png",
+        "star40": "https://guillermojgvc.github.io/img/stars/star40.png",
+        "star45": "https://guillermojgvc.github.io/img/stars/star45.png",
+        "star50": "https://guillermojgvc.github.io/img/stars/star50.png"
     },
     "defaultStyle": {
         "font": "Helvetica"
