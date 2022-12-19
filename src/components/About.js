@@ -1,18 +1,396 @@
 import { useContext, useState } from "react";
 import NavContext from "../context/navContext";
+import uuid from "react-uuid";
 // CUSTOM
 import { FormattedMessage, FormattedDate, useIntl } from "react-intl";
 import info_en from "../../info/cv_en.json";
 import info_es from "../../info/cv_es.json";
+import docdef from "../../info/docdefinition";
+// GENERATE PDF
+import pdfMake from "pdfmake";
+import vfs from "../../public/fonts/Helvetica-Font/vfs_fonts";
+
+pdfMake.vfs = vfs;
+
+pdfMake.fonts = {
+  Helvetica: {
+    normal: "Helvetica.ttf",
+    bold: "Helvetica-Bold.ttf",
+    italics: "Helvetica-Oblique.ttf",
+    bolditalics: "Helvetica-BoldOblique.ttf"
+  }
+};
 
 const About = () => {
   const intl = useIntl();
   const { nav } = useContext(NavContext);
   const [language, setLanguage] = useState(intl.formatMessage({ id: 'current' }));
+  const [docDefinition, setDocDefinition] = useState(docdef);
 
   const personalInfo = {
     'en': info_en,
     'es': info_es,
+  }
+
+  const handleDownloadCV = () => {
+    let cvDefinition = {...docDefinition};
+    cvDefinition.content = cvDefinition.content.concat(generateCVContent());
+    const pdfDocGenerator = pdfMake.createPdf(cvDefinition);
+    pdfDocGenerator.download(`CV_Guillermo_Vaca`);
+  }
+
+  const getLangData = (langId) => {
+    return intl.formatMessage({ id: langId }) || "";
+  }
+
+  const generateCVContent = () => {
+    let cvDefinition = [
+      // Informacion personal
+      {
+        "layout": 'noBorders',
+        "table": {
+          "widths": ['*'],
+          "body": [
+            [
+              {
+                "text": `${getLangData('about_personal_info').toLocaleUpperCase()}\n`,
+                "style": 'subheader2'
+              }
+            ],
+          ]
+        }
+      },
+      { "text": " \n" },
+      {
+        "text": [
+          {
+            "text": `${getLangData('about_experience')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${ intl.formatMessage({id:'info_experience'},{
+              "year": new Date().getFullYear() - intl.formatMessage({ id: 'info_since_year' })
+            }) }`,
+            "style": "normal",
+          }
+        ],
+        "alignment": "justify",
+      },
+      {
+        "text": [
+          {
+            "text": `${getLangData('about_birthdate')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${getLangData('info_birthdate')}`,
+            "style": "normal",
+          }
+        ],
+        "alignment": "justify",
+      },
+      {
+        "text": [
+          {
+            "text": `${getLangData('about_address')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${getLangData('info_address')}`,
+            "style": "normal",
+          }
+        ],
+        "alignment": "justify",
+      },
+      {
+        "text": [
+          {
+            "text": `${getLangData('about_nationality')}: `,
+            "style": "normal_bold",
+          },
+
+          {
+            "text": `${getLangData('info_nationality')}`,
+            "style": "normal",
+          }
+        ],
+        "alignment": "justify",
+      },
+      {
+        "text": [
+          {
+            "text": `${getLangData('about_phone')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${getLangData('info_phone')}`,
+            "style": "normal",
+          }
+        ],
+        "alignment": "justify",
+      },
+      {
+        "text": [
+          {
+            "text": `${getLangData('about_email')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${getLangData('info_email')}`,
+            "style": "normal",
+          }
+        ],
+        "alignment": "justify",
+      },
+
+      // EDUCATION
+      " ",
+      {
+        "layout": 'noBorders',
+        "table": {
+          "widths": ['*'],
+          "body": [
+            [
+              {
+                "text": `${getLangData('about_education').toLocaleUpperCase()}\n`,
+                "style": 'subheader2'
+              }
+            ],
+          ]
+        }
+      },
+      " ",
+
+    ];
+
+    //Agregar educacion
+    personalInfo[language]["education"].map(item => {
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_year')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["year"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_institution')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["institution"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_degree')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["degree"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+      cvDefinition.push({ "text": " \n" });
+    });
+
+    // Generate Certifications
+    let certificationList = [];
+    personalInfo[language]["certification"].map(item => {
+      certificationList.push(`${item['year']} - ${item['institution']}, ${item['degree']}\n`);
+    });
+    // Agregar certificacion
+    cvDefinition.push(
+      {
+        "layout": 'noBorders',
+        "table": {
+          "widths": ['*'],
+          "body": [
+            [
+              {
+                "text": `${getLangData('about_certifications').toUpperCase()}\n`,
+                "style": 'subheader2'
+              }
+            ],
+          ]
+        }
+      }
+     );
+
+    cvDefinition.push({ "text": " \n" });
+    cvDefinition.push({
+      margin: [30, 0],
+      ul: certificationList,
+      lineHeight: 1.5
+    });
+    // Agregar experiencia
+    cvDefinition.push({ "text": " \n" });
+    cvDefinition.push(
+      {
+        "layout": 'noBorders',
+        "table": {
+          "widths": ['*'],
+          "body": [
+            [
+              {
+                "text": `${getLangData('about_experience').toUpperCase()}\n`,
+                "style": 'subheader2'
+              }
+            ],
+          ]
+        }
+      }
+    );
+    cvDefinition.push({ "text": " \n" });
+    //
+    personalInfo[language]["experience"].map(item => {
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_year')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["year"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_institution')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["institution"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_role')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["role"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+      cvDefinition.push({
+        "text": [
+          {
+            "text": `${getLangData('about_responsibilities')}: `,
+            "style": "normal_bold",
+          },
+          {
+            "text": `${item["responsibilities"]}`,
+            "style": "normal",
+          },
+
+        ],
+        "alignment": "justify",
+      });
+
+      // AGREGAR PROJECTS
+      let projectList = [];
+      cvDefinition.push({
+        "text": {
+          "text": `${getLangData('about_projects')}\n`,
+          "style": "normal_bold",
+        }
+      });
+
+      item["projects"].map(item1 => {
+        projectList.push(`${item1["text"]}`);
+      });
+
+      cvDefinition.push({
+        margin: [30, 0],
+        ul: projectList,
+        lineHeight: 1.5
+      });
+
+      cvDefinition.push({ "text": " \n" });
+    })
+
+    // Agregar skills
+    cvDefinition.push(
+      {
+        "layout": 'noBorders',
+        "table": {
+          "widths": ['*'],
+          "body": [
+            [
+              {
+                "text": `${getLangData('about_skills').toLocaleUpperCase()}\n`,
+                "style": 'subheader2'
+              }
+            ],
+          ]
+        }
+      }
+    );
+
+    cvDefinition.push({ "text": " \n" });
+    let contador = 0;
+    let skill = [];
+    personalInfo[language]["skills"].map(item => {
+      if (contador == 3) {
+        contador = 0;
+
+        cvDefinition.push({
+          "alignment": 'justify',
+          "columns": skill
+        })
+
+        cvDefinition.push({ "text": " \n" });
+
+        skill = [];
+      }
+
+      skill.push([
+        {
+          text: `${item['title']}`
+        },
+        {
+          "image": `star${Math.floor(parseInt(item['knowledge']) / 20)}${(parseInt(item['knowledge']) % 20) > 0 ? '5' : '0'}`,
+          fit: [100, 100]
+        },
+      ]
+      )
+      contador++;
+
+
+    });
+    console.log(JSON.stringify(cvDefinition));
+
+    return cvDefinition;
   }
 
   return (
@@ -182,7 +560,7 @@ const About = () => {
               </ul>
             </div>
             <div className="col-12 resume-btn-container">
-              <a href="#" className="btn btn-resume">
+              <a href="#" onClick={handleDownloadCV} className="btn btn-resume">
                 <span>
                   <i className="fa fa-download" />
                   <FormattedMessage id="about_btn_downloadcv"
@@ -213,7 +591,7 @@ const About = () => {
                 {
                   personalInfo[language]["experience"].map(item => {
                     {/* Item Starts */ }
-                    return <div key={`${item.projects}`} className="item">
+                    return <div key={`${uuid()}`} className="item">
                       <span className="bullet" />
                       <div className="card">
                         <div className="card-header">
@@ -234,9 +612,9 @@ const About = () => {
                           </p>
                           <span className="d-block font-weight-400 uppercase">
                             <FormattedMessage id="about_projects"
-                              defaultMessage="ACCOMPLISHED PROJECTS:" />
+                              defaultMessage="ACCOMPLISHED PROJECTS" />
                             {item.projects != undefined && item.projects.map(project => {
-                              return <li key={`li_${item.projects}`}>{project}</li>
+                              return <li key={`li_${uuid()}`}>{project["text"]}</li>
                             })}
 
                           </span>
@@ -262,7 +640,7 @@ const About = () => {
                 {
                   personalInfo[language]["education"].map(item => {
                     {/* Item Starts */ }
-                    return <div key={`${item.institution}_${item.year}`} className="item">
+                    return <div key={`${uuid()}`} className="item">
                       <span className="bullet" />
                       <div className="card">
                         <div className="card-header">
@@ -305,7 +683,7 @@ const About = () => {
                 {
                   personalInfo[language]["certification"].map(item => {
                     {/* Item Starts */ }
-                    return <div key={`cert_${item.institution}_${item.year}`} className="item">
+                    return <div key={`cert_${uuid()}`} className="item">
                       <span className="bullet" />
                       <div className="card">
                         <div className="card-header">
@@ -352,7 +730,7 @@ const About = () => {
             </div>
             {
               personalInfo[language]["skills"].map(item => {
-                return <div key={`${item.knowledge}_${item.title}`} className="col-12 col-sm-6 col-md-4">
+                return <div key={`${uuid()}`} className="col-12 col-sm-6 col-md-4">
                   <span className="skill-text">{item.title}</span>
                   <div className="chart-bar">
                     <span

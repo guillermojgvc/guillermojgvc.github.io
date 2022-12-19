@@ -6,7 +6,7 @@
             "role": "Software Analyst",
             "responsibilities": "Fullstack developer, ETL developer",
             "projects":[
-                "credit reports"
+                {"text": "Credit score report profile"}
             ]
         },
         {
@@ -15,7 +15,7 @@
             "role": "Lead Software Developer",
             "responsibilities": "Fullstack developer, Mobile App developer",
             "projects":[
-                "mobility as a service, fleet and transport"
+                {"text": "Mobility as a service, fleet and transport"}
             ]
         },
         {
@@ -24,8 +24,8 @@
             "role": "Software Developer",
             "responsibilities": "Fullstack developer, Mobile App developer",
             "projects":[
-                "Bank institutional page",
-                "Chevrolet Sale Asistant 'Mi Asesor Chevrolet'"
+                {"text": "Bank institutional page"},
+                {"text": "Chevrolet Sale Asistant 'Mi Asesor Chevrolet'"}
             ]
         },
         {
@@ -34,7 +34,7 @@
             "role": "GIS Analyst",
             "responsibilities": "GIS Developer, Fullstack developer",
             "projects":[
-                "Telco GIS projects"
+                {"text": "Telco GIS projects"}
             ]
         },
         {
@@ -43,16 +43,16 @@
             "role": "Software consultant",
             "responsibilities": "GIS Developer, Fullstack developer, ETL developer",
             "projects":[
-                "Quito's district indicators second edition",
-                "Web map viewer for investment projects",
-                "Micro planning web map viewer",
-                "National Logistics Observatory - ONL (Colombia)",
-                "Public works metropolitan geodatabase",
-                "Decentralized territorial information system",
-                "Decentralized Autonomous governments monitoring system",
-                "Irregular human settlements system",
-                "Crime web map viewer",
-                "Quito´s district indicators"
+                {"text": "Quito's district indicators second edition"},
+                {"text": "Web map viewer for investment projects"},
+                {"text": "Micro planning web map viewer"},
+                {"text": "National Logistics Observatory - ONL (Colombia)"},
+                {"text": "Public works metropolitan geodatabase"},
+                {"text": "Decentralized territorial information system"},
+                {"text": "Decentralized Autonomous governments monitoring system"},
+                {"text": "Irregular human settlements system"},
+                {"text": "Crime web map viewer"},
+                {"text": "Quito's district indicators"}
             ]
         }
     ],
@@ -187,8 +187,12 @@
             "knowledge": 80
         },
         {
-            "title": "Arcgis",
+            "title": "ArcGIS",
             "knowledge": 60
+        },
+        {
+            "title": "QGIS",
+            "knowledge": 75
         },
         {
             "title": "Sharepoint",

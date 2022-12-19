@@ -36,7 +36,7 @@
     "info_nationality":"Ecuadorian",
     "info_experience":"{year} years",
     "info_since_year":"2013",
-    "info_address":"Quito",
+    "info_address":"Quito - Ecuador",
     "info_age": "{age} years old",
     "info_languages":"English, Spanish",
     "info_phone":"+(593) 996 354 190",
@@ -54,8 +54,15 @@
     "about_phone":"Phone",
     "about_email":"Email",
     "about_btn_downloadcv":"download my cv",
-    "about_projects":"ACCOMPLISHED PROJECTS:",
+    "about_projects":"Accomplished Projects",
     "about_skills":"skills",
     "about_education":"education",
-    "about_certifications":"certifications"
+    "about_certifications":"certifications",
+    "about_personal_info":"Personal Information",
+    "about_year":"Year",
+    "about_institution":"Institution",
+    "about_degree":"Degree",
+    "about_period":"Period",
+    "about_role":"Role",
+    "about_responsibilities":"Responsibilities"
 }
