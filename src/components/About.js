@@ -388,7 +388,6 @@ const About = () => {
 
 
     });
-    console.log(JSON.stringify(cvDefinition));
 
     return cvDefinition;
   }
