@@ -1,0 +1,36 @@
+{
+  "name": "istanbul-react",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/",
+  "scripts": {
+    "font": "node node_modules/pdfmake/build-vfs.js public/fonts/Helvetica-Font public/fonts/Helvetica-Font/vfs_fonts.js",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "npm run build && npm run export && touch out/.nojekyll",
+    "deploy": "gh-pages -d out -t true",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "emailjs-com": "^3.2.0",
+    "gh-pages": "^4.0.0",
+    "next": "12.2.2",
+    "next-videos": "^1.5.0",
+    "pdfmake": "^0.2.6",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "18.2.0",
+    "react-intl": "^6.2.1",
+    "react-moving-text": "^0.0.7",
+    "react-uuid": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.2"
+  }
+}

@@ -1,0 +1,247 @@
+{
+    "experience": [
+        {
+            "year": "Abr 2023 - Actualidad",
+            "institution": "Technisys",
+            "role": "Fullstack developer",
+            "responsibilities": "Desarrollador Fullstack",
+            "projects":[
+                {"text": "Core Bancario"}
+            ]
+        },
+        {
+            "year": "May 2021 - Mar 2023",
+            "institution": "Aplios",
+            "role": "Analista de Software",
+            "responsibilities": "Desarrollador Fullstack, Desarrollador ETL",
+            "projects":[
+                {"text": "Reportes de perfil de crediticio"}
+            ]
+        },
+        {
+            "year": "Ago 2020 - Abr 2021",
+            "institution": "Track4Go",
+            "role": "Desarrollador Líder",
+            "responsibilities": "Desarrollador Fullstack, Desarrollador de aplicaciones móviles",
+            "projects":[
+                {"text": "Logística, transporte de carga pesada"}
+            ]
+        },
+        {
+            "year": "Mar 2019 - Jul 2020",
+            "institution": "Yagé",
+            "role": "Desarrollador de Software",
+            "responsibilities": "Desarrollador Fullstack, Desarrollador de aplicaciones móviles",
+            "projects":[
+                {"text": "'Mi Asesor Chevrolet' Asistente de ventas Chevrolet "}
+            ]
+        },
+        {
+            "year": "Mar 2018 - Mar 2019",
+            "institution": "Corporación Nacional de Telecomunicaciones CNT EP.",
+            "role": "Analista SIG",
+            "responsibilities": "Desarrollador SIG, Desarrollador Fullstack",
+            "projects":[
+                {"text": "Proyectos SIG para telecomunicaciones"}
+            ]
+        },
+        {
+            "year": "May 2013 - Feb 2018",
+            "institution": "EXCO - Excelencia Corporativa",
+            "role": "Consultor de Software",
+            "responsibilities": "Desarrolador SIG, Desarrollador Fullstack, Desarrollador ETL",
+            "projects":[
+                {"text": "Sistema de indicadores distritales de Quito segunda edición"},
+                {"text": "Visor geográfico de proyectos de inversión"},
+                {"text": "Visor geográfico de microplanificación"},
+                {"text": "Observatorio Nacional de Logística - ONL (Colombia)"},
+                {"text": "Base de datos geográfica para empresa publica de obras"},
+                {"text": "Herramienta de información territorial decentralizada"},
+                {"text": "Sistema de monitoreo de gobiernos autonomos descentralizados"},
+                {"text": "Sistema de asentamientos humanos irregulares"},
+                {"text": "Mapa del delito - Delitoscopio"},
+                {"text": "Sistema de indicadores distritales de Quito"}
+            ]
+        }
+    ],
+    "education": [
+        {
+            "year": "2019",
+            "institution": "Universität Salzburg",
+            "degree": "Geographical Information Science & Systems (UNIGIS Specialist)."
+        },
+        {
+            "year": "2015",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Ingeniero Informático"
+        }
+    ],
+    "certification": [
+        {
+            "year": "2022",
+            "institution": "Nova English",
+            "degree": "B1 level"
+        },
+        {
+            "year": "2017",
+            "institution": "Instituto tecnológico Benito Juárez",
+            "degree": "Ofimática: Asistencia Administrativa"
+        },
+        {
+            "year": "2017",
+            "institution": "Instituto tecnológico Benito Juárez",
+            "degree": "Administración de bases de datos"
+        },
+        {
+            "year": "2017",
+            "institution": "Epik Consulting",
+            "degree": "Ciclo de vida de Desarrollo de software"
+        },
+        {
+            "year": "2015",
+            "institution": "Clear Minds",
+            "degree": "AngularJS Avanzado"
+        },
+        {
+            "year": "2015",
+            "institution": "Clear Minds",
+            "degree": "Angularjs Básico"
+        },
+        {
+            "year": "2014",
+            "institution": "SECAP",
+            "degree": "Gerencia de calidad y normas ISO 9000"
+        },
+        {
+            "year": "2014",
+            "institution": "SECAP",
+            "degree": "Gestión por procesos"
+        },
+        {
+            "year": "2013",
+            "institution": "Clear Minds",
+            "degree": "Java Server Faces."
+        },
+        {
+            "year": "2013",
+            "institution": "Clear Minds",
+            "degree": "Java Standar Edition."
+        },
+        {
+            "year": "2011",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Microsoft Technology Associate MTA Database Adm."
+        },
+        {
+            "year": "2011",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Suficiencia en manejo de herramientas informáticas."
+        },
+        {
+            "year": "2007",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Suficiencia en manejo de herramientas informáticas."
+        },
+        {
+            "year": "2005",
+            "institution": "Universidad Central del Ecuador - UCE",
+            "degree": "Auxiliar técnico en diseño gráfico digital"
+        },
+        {
+            "year": "2004",
+            "institution": "SECAP",
+            "degree": "Auxiliar técnico en mantenimiento de computadores."
+        }
+    ],
+    "skills": [
+        {
+            "title": "JAVA",
+            "knowledge": 80
+        },
+        {
+            "title": ".Net",
+            "knowledge": 60
+        },
+        {
+            "title": "Python",
+            "knowledge": 40
+        },
+        {
+            "title": "PHP",
+            "knowledge": 70
+        },
+        {
+            "title": "React JS",
+            "knowledge": 80
+        },
+        {
+            "title": "React Native",
+            "knowledge": 80
+        },
+        {
+            "title": "Apache Cordova",
+            "knowledge": 70
+        },
+        {
+            "title": "JavaScript",
+            "knowledge": 85
+        },
+        {
+            "title": "jQuery",
+            "knowledge": 70
+        },
+        {
+            "title": "CSS",
+            "knowledge": 80
+        },
+        {
+            "title": "ArcGIS",
+            "knowledge": 60
+        },
+        {
+            "title": "QGIS",
+            "knowledge": 75
+        },
+        {
+            "title": "Sharepoint",
+            "knowledge": 40
+        },
+        {
+            "title": "Web Services",
+            "knowledge": 90
+        },
+        {
+            "title": "Oracle",
+            "knowledge": 80
+        },
+        {
+            "title": "MS SQL Server",
+            "knowledge": 75
+        },
+        {
+            "title": "PostgreSQL/PostGIS",
+            "knowledge": 90
+        },
+        {
+            "title": "MySQL",
+            "knowledge": 40
+        },
+        {
+            "title": "SQLite",
+            "knowledge": 90
+        },
+        {
+            "title": "Power BI",
+            "knowledge": 40
+        },
+        {
+            "title": "Pentaho",
+            "knowledge": 85
+        },
+        {
+            "title": "Integration Services",
+            "knowledge": 80
+        }
+        
+    ]
+}
