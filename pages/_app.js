@@ -17,8 +17,8 @@ function MyApp({ Component, pageProps }) {
   }
 
   // get browser language without the region code
-  // const [language, setLanguage] = useState(navigator.language.split(/[-_]/)[0]);
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(navigator.language.split(/[-_]/)[0]);
+  // const [language, setLanguage] = useState('en');
 
   return (
     <IntlProvider defaultLocale="en" locale={language} key={`language`} messages={messages[language]}>
