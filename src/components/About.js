@@ -36,7 +36,7 @@ const About = () => {
     let cvDefinition = {...docDefinition};
     cvDefinition.content = cvDefinition.content.concat(generateCVContent());
     const pdfDocGenerator = pdfMake.createPdf(cvDefinition);
-    pdfDocGenerator.download(`CV_Guillermo_Vaca`);
+    pdfDocGenerator.download(`CV_Guillermo_Vaca_${language.toUpperCase()}`);
   }
 
   const getLangData = (langId) => {

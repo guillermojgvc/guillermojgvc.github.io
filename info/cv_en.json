@@ -1,7 +1,16 @@
 {
     "experience": [
         {
-            "year": "May 2021 - Today",
+            "year": "Apr 2023 - Today",
+            "institution": "Technisys",
+            "role": "Fullstack developer",
+            "responsibilities": "Fullstack developer",
+            "projects":[
+                {"text": "Banking core"}
+            ]
+        },
+        {
+            "year": "May 2021 - Mar 2023",
             "institution": "Aplios",
             "role": "Software Analyst",
             "responsibilities": "Fullstack developer, ETL developer",
@@ -24,7 +33,6 @@
             "role": "Software Developer",
             "responsibilities": "Fullstack developer, Mobile App developer",
             "projects":[
-                {"text": "Bank institutional page"},
                 {"text": "Chevrolet Sale Asistant 'Mi Asesor Chevrolet'"}
             ]
         },
